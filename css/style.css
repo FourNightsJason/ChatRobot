@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: wheat;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+body > #app {
+  width: calc(100vw - 20px);
+  height: calc(100vh - 20px);
+  background: linear-gradient(to bottom, gold, red);
+  margin: 10px;
+  overflow: hidden;
+}
+body > #app > header {
+  width: 95%;
+  height: 30px;
+  background: radial-gradient(at center, white, black);
+  text-shadow: 0px 0px 5px white;
+  font-size: 25px;
+  line-height: 30px;
+  border-radius: 10px;
+  margin: 10px auto;
+}
+body > #app > main {
+  width: 95%;
+  height: calc(100% - 60px);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+body > #app > main > article {
+  width: calc(100% - 160px);
+  transition: all 0.5s;
+}
+body > #app > main > article > section {
+  background: whitesmoke;
+  border: 5px groove white;
+  box-sizing: border-box;
+}
+body > #app > main > article > section:first-child {
+  height: calc(100% - 60px);
+  margin-bottom: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+body > #app > main > article > section:first-child > div {
+  display: flex;
+  margin: 5px;
+}
+body > #app > main > article > section:first-child > div.user {
+  transform: rotateY(180deg);
+}
+body > #app > main > article > section:first-child > div > #headIcon {
+  max-width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  overflow: hidden;
+  background: url('../img/robotHead.jpg') center center no-repeat;
+  background-size: contain;
+}
+body > #app > main > article > section:first-child > div > #headIcon.user {
+  background: url('../img/userHead.jpg') center center no-repeat;
+  background-size: contain;
+  transform: rotateY(180deg);
+}
+body > #app > main > article > section:first-child > div > div {
+  width: 100%;
+  position: relative;
+}
+body > #app > main > article > section:first-child > div > div > #nickname {
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  font-size: 12px;
+  vertical-align: top;
+  position: absolute;
+  left: 5px;
+}
+body > #app > main > article > section:first-child > div > div > #nickname.user {
+  transform: rotateY(180deg);
+}
+body > #app > main > article > section:first-child > div > div > #dialog {
+  display: inline-block;
+  max-width: calc(100% - 20px);
+  position: relative;
+  left: 10px;
+}
+body > #app > main > article > section:first-child > div > div > #dialog > span {
+  text-align: center;
+  border-radius: 10px;
+  width: 100%;
+  padding: 5px;
+  background: wheat;
+  display: inline-block;
+}
+body > #app > main > article > section:first-child > div > div > #dialog::before {
+  display: inline-block;
+  content: '';
+  border: 5px solid transparent;
+  border-right: 5px solid wheat;
+  box-sizing: border-box;
+  position: absolute;
+  top: 10px;
+  left: -10px;
+}
+body > #app > main > article > section:first-child > div > div > #dialog.user > span {
+  background: skyblue;
+  transform: rotateY(180deg);
+}
+body > #app > main > article > section:first-child > div > div > #dialog.user::before {
+  border-right: 5px solid skyblue;
+}
+body > #app > main > article > section:last-child {
+  height: 50px;
+}
+body > #app > main > article > section:last-child > textArea {
+  outline: none;
+  resize: none;
+  height: 100%;
+  background: whitesmoke;
+  width: calc(100% - 40px);
+  vertical-align: top;
+  box-sizing: border-box;
+}
+body > #app > main > article > section:last-child > input {
+  background: cornflowerblue;
+  outline: none;
+  height: 100%;
+  width: 40px;
+  box-sizing: border-box;
+  border: outset;
+}
+body > #app > main > article > section:last-child > input:hover {
+  border: inset;
+}
+body > #app > main > aside {
+  width: 150px;
+  border-left: 5px groove white;
+  border-bottom: 5px groove white;
+  box-sizing: border-box;
+  transition: all 0.5s;
+  position: relative;
+  overflow: hidden;
+}
+body > #app > main > aside > #hide {
+  text-indent: -18px;
+  line-height: 50px;
+  width: 0px;
+  height: 50px;
+  border: 10px solid transparent;
+  border-left: 20px solid rgba(150, 150, 150, 0.5);
+  background: transparent;
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+body > #app > main > aside:hover #hide {
+  left: 0;
+}
+body > #app > main > aside > #first {
+  position: absolute;
+  height: 20px;
+  width: 40px;
+  transform: skewX(30deg);
+  left: -7px;
+  background: dodgerblue;
+  border-top: 5px groove white;
+  border-right: 5px groove white;
+}
+body > #app > main > aside > #second {
+  position: absolute;
+  height: 20px;
+  width: 40px;
+  transform: skewX(30deg);
+  left: 38px;
+  background: deepskyblue;
+  border-top: 5px groove white;
+  border-right: 5px groove white;
+}
+body > #app > main > aside > #third {
+  position: absolute;
+  height: 20px;
+  width: 40px;
+  transform: skewX(30deg);
+  left: 83px;
+  background: skyblue;
+  border-top: 5px groove white;
+  border-right: 5px groove white;
+}
+body > #app > main > aside > #content {
+  width: calc(100% - 5px);
+  height: calc(100% - 25px);
+  background: dodgerblue;
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+}
+body > #app > main > aside::before {
+  display: block;
+  content: "";
+  position: absolute;
+  height: calc(100% - 25px);
+  width: 8px;
+  right: 0px;
+  bottom: 0px;
+  border-top: 5px groove white;
+  border-right: 5px groove white;
+}

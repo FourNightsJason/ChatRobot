@@ -1,0 +1,219 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: wheat;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	> #app {
+		width: calc(~"100vw - 20px");
+		height: calc(~"100vh - 20px");
+		background: linear-gradient(to bottom, gold, red);
+		margin: 10px;
+		overflow: hidden;
+		> header {
+			width: 95%;
+			height: 30px;
+			background: radial-gradient(at center, white, black);
+			text-shadow: 0px 0px 5px white;
+			font-size: 25px;
+			line-height: 30px;
+			border-radius: 10px;
+			margin: 10px auto;
+		}
+		> main {
+			width: 95%;
+			height: calc(100% - 60px);
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+			> article {
+				width: calc(100% - 160px);
+				transition: all .5s;
+				> section {
+					background: whitesmoke;
+					border: 5px groove white;
+					box-sizing: border-box;
+					&:first-child {
+						height: calc(100% - 60px);
+						margin-bottom: 10px;
+						overflow-y: auto;
+						overflow-x: hidden;
+						scroll-behavior: smooth;
+						> div {
+							display: flex;
+							margin: 5px;
+							&.user {
+								transform: rotateY(180deg);
+							}
+							> #headIcon {
+								max-width: 50px;
+								height: 50px;
+								border-radius: 5px;
+								overflow: hidden;
+								background: url('../img/robotHead.jpg') center center no-repeat;
+								background-size: contain;
+								&.user {
+									background: url('../img/userHead.jpg') center center no-repeat;
+									background-size: contain;
+									transform: rotateY(180deg);
+								}
+							}
+							> div {
+								width: 100%;
+								position: relative;
+								> #nickname {
+									color: white;
+									text-shadow: 1px 1px 1px black;
+									font-size: 12px;
+									vertical-align: top;
+									position: absolute;
+									left: 5px;
+									&.user {
+										transform: rotateY(180deg);
+									}
+								}
+								> #dialog {
+									display: inline-block;
+									max-width: calc(100% - 20px);
+									position: relative;
+									left: 10px;
+									> span {
+										text-align: center;
+										border-radius: 10px;
+										width: 100%;
+										padding: 5px;
+										background: wheat;
+										display: inline-block;
+									}
+									&::before {
+										display: inline-block;
+										content: '';
+										border: 5px solid transparent;
+										border-right: 5px solid wheat;
+										box-sizing: border-box;
+										position: absolute;
+										top: 10px;
+										left: -10px;
+									}
+									&.user {
+										> span {
+											background: skyblue;
+											transform: rotateY(180deg);
+										}
+										&::before {
+											border-right: 5px solid skyblue;
+										}
+									}
+								}
+							}
+						}
+					}
+					&:last-child {
+						height: 50px;
+						> textArea {
+							outline: none;
+							resize: none;
+							height: 100%;
+							background: whitesmoke;
+							width: calc(100% - 40px);
+							vertical-align: top;
+							box-sizing: border-box;
+						}
+						> input {
+							background: cornflowerblue;
+							outline: none;
+							height: 100%;
+							width: 40px;
+							box-sizing: border-box;
+							border: outset;
+							&:hover {
+								border: inset;
+							}
+						}
+					}
+				}
+			}
+			> aside {
+				width: 150px;
+				// height: calc(100% - 20px);
+				border-left: 5px groove white;
+				border-bottom: 5px groove white;
+				box-sizing: border-box;
+				transition: all .5s;
+				position: relative;
+				// top: 20px;
+				overflow: hidden;
+				> #hide {
+					text-indent: -18px;
+					line-height: 50px;
+					width: 0px;
+					height: 50px;
+					border: 10px solid transparent;
+					border-left: 20px solid rgba(150, 150, 150, .5);
+					background: transparent;
+					position: absolute;
+					top: 50%;
+					left: -20px;
+					transform: translateY(-50%);
+					transition: all .5s;
+					cursor: pointer;
+				}
+				&:hover #hide {
+					left: 0;
+				}
+				> #first {
+					position: absolute;
+					height: 20px;
+					width: 40px;
+					transform: skewX(30deg);
+					left: -7px;
+					background: dodgerblue;
+					border-top: 5px groove white;
+					border-right: 5px groove white;
+				}
+				> #second {
+					position: absolute;
+					height: 20px;
+					width: 40px;
+					transform: skewX(30deg);
+					left: 38px;
+					background: deepskyblue;
+					border-top: 5px groove white;
+					border-right: 5px groove white;
+				}
+				> #third {
+					position: absolute;
+					height: 20px;
+					width: 40px;
+					transform: skewX(30deg);
+					left: 83px;
+					background: skyblue;
+					border-top: 5px groove white;
+					border-right: 5px groove white;
+				}
+				> #content {
+					width: calc(100% - 5px);
+					height: calc(100% - 25px);
+					background: dodgerblue;
+					position: absolute;
+					bottom: 0;
+					z-index: 0;
+				}
+				&::before {
+					display: block;
+					content: "";
+					position: absolute;
+					height: calc(100% - 25px);
+					width: 8px;
+					right: 0px;
+					bottom: 0px;
+					border-top: 5px groove white;
+					border-right: 5px groove white;
+				}
+			}
+		}
+	}
+}
